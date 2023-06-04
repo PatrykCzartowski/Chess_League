@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+  <title>Chess League</title>
+  <link rel="icon" type="image/x-icon" href="./assets/logo.svg">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    header h1 {
+      margin-right: 5px;
+    }
+
+    section {
+      padding: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table th, table td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ccc;
+    }
+
+    table th {
+      background-color: rgb(32, 178, 170, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Chess League</h1>
+    <img src="./assets/logo.svg" height="50px" width="50px" />
+  </header>
+
+  <section>
+    <h2>Our players</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Player</th>
+          <th>Ranking</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Jan Kowalski</td>
+          <td>1330</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Anna Nowak</td>
+          <td>700</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Mariusz Zieliński</td>
+          <td>2300</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Alicja Wiśniewska</td>
+          <td>1500</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Last Games</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Players</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Jan Kowalski vs Anna Nowak</td>
+          <td>1:0</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Mariusz Zieliński vs Anna Nowak</td>
+          <td>1:1</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Alicja Wiśniewska vs Jan Kowalski</td>
+          <td>0:1</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Alicja Wiśniewska vs Anna Nowak</td>
+          <td>0:1</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</body>
+</html>
