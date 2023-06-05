@@ -29,12 +29,20 @@
       margin-right: 5px;
     }
 
+    h2 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     section {
       padding: 20px;
     }
 
     table {
-      width: 100%;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
       border-collapse: collapse;
     }
 
@@ -47,13 +55,42 @@
     table th {
       background-color: rgb(32, 178, 170, 0.5);
     }
+
+    nav {
+      background-color: lightseagreen;
+      padding: 10px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin-right: 10px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 5px 10px;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Chess League</h1>
-    <img src="./assets/logo.svg" height="50px" width="50px" />
   </header>
+
+  <nav>
+    <ul>
+      <li><a href="/leagueAdmin/games">Admin Panel</a></li>
+    </ul>
+  </nav>
+{% for item in all%}
+  <p>{{ item.id }}</p>
+{% endfor %}
 
   <section>
     <h2>Our players</h2>
@@ -63,29 +100,18 @@
           <th>ID</th>
           <th>Player</th>
           <th>Ranking</th>
+          <th>Last update</th>
         </tr>
       </thead>
       <tbody>
+        {% for item in all_p %}
         <tr>
-          <td>1</td>
-          <td>Jan Kowalski</td>
-          <td>1330</td>
+          <td>{{item.id}}</td>
+          <td>{{item.name}} {{item.surname}}</td>
+          <td>{{item.ranking}}</td>
+          <td>{{item.last_update}}</td>
         </tr>
-        <tr>
-          <td>2</td>
-          <td>Anna Nowak</td>
-          <td>700</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Mariusz Zieliński</td>
-          <td>2300</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>Alicja Wiśniewska</td>
-          <td>1500</td>
-        </tr>
+        {% endfor %}
       </tbody>
     </table>
   </section>
@@ -98,29 +124,18 @@
           <th>ID</th>
           <th>Players</th>
           <th>Result</th>
+          <th>Last update</th>
         </tr>
       </thead>
       <tbody>
+        {% for item in all_g %}
         <tr>
-          <td>1</td>
-          <td>Jan Kowalski vs Anna Nowak</td>
-          <td>1:0</td>
+          <td>{{item.id}}</td>
+          <td>{{item.players}}</td>
+          <td>{{item.result}}</td>
+          <td>{{item.last_update}}</td>
         </tr>
-        <tr>
-          <td>2</td>
-          <td>Mariusz Zieliński vs Anna Nowak</td>
-          <td>1:1</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Alicja Wiśniewska vs Jan Kowalski</td>
-          <td>0:1</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>Alicja Wiśniewska vs Anna Nowak</td>
-          <td>0:1</td>
-        </tr>
+        {% endfor %}
       </tbody>
     </table>
   </section>
