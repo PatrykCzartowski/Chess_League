@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+     
+  <title>Logowanie - Liga Szachowa</title>
+  <style>
+    /* Resetowanie domyślnych styli dla całej strony */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    /* Styl nagłówka strony */
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: lightseagreen;
+      padding: 10px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin-right: 10px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 5px 10px;
+    }
+
+    /* Styl sekcji logowania */
+    section {
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      margin-top: 20px;
+      height: 100vh;
+    }
+
+    /* Styl formularza logowania */
+    form {
+      width: 300px;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+    }
+
+    form label, form input {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    form input[type="text"], form input[type="password"] {
+      width: 100%;
+      padding: 5px;
+    }
+
+    form input[type="submit"] {
+      background-color: lightseagreen;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Log in</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="/leagueAdmin">Home</a></li>
+    </ul>
+  </nav>
+  {{ xd }}
+  <section>
+    <form method = "POST" action="{% url 'login' %}">
+        {% csrf_token %}
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+      <input type="submit" value="Log in">
+    </form>
+  </section>
+</body>
+</html>

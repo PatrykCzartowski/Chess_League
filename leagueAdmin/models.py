@@ -18,4 +18,3 @@ class Games(models.Model):
     def __str__(self):
         return self.players + ' | ' + self.result
     
-    

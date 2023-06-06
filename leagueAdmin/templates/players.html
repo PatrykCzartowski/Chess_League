@@ -93,12 +93,14 @@
     <ul>
       <li><a href="/leagueAdmin/games/">Games</a></li>
       <li><a href="#">Players</a></li>
+      <li><a href="/leagueAdmin">Home</a></li>
     </ul>
   </nav>
 
   <section>
     <h2>Add player</h2>
-    <form>
+    <form method = "POST" action = "{% url 'players' %}">
+      {% csrf_token %}
       <label for="in_name">Name:</label>
       <input type="text" id="in_name" name="name" placeholder="Enter player name" required>
 
@@ -114,7 +116,8 @@
   </section>
   <section>
     <h2>Remove player</h2>
-    <form>
+    <form method = "POST" action = "{% url 'players' %}">
+      {% csrf_token %}
       <label for="in_ID">ID:</label>
       <input type="text" id="in_ID" name="ID" placeholder="Enter player ID" required>
 
@@ -124,7 +127,8 @@
 
   <section>
     <h2>Update player</h2>
-    <form>
+    <form method = "POST" action = "{% url 'players' %}">
+      {% csrf_token %}
       <label for="in_ID">ID:</label>
       <input type="text" id="in_ID" name="ID" placeholder="Enter player ID" required>
   
