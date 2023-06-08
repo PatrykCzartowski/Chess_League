@@ -82,6 +82,41 @@
       border: none;
       cursor: pointer;
     }
+
+    button {
+      background-color: lightseagreen;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      margin-right: 20px;
+    }
+    .buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    a {
+      text-decoration: none;
+      color:#fff;
+    }
+
+    table {
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+      border-collapse: collapse;
+    }
+
+    table th, table td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ccc;
+    }
+
+    table th {
+      background-color: rgb(32, 178, 170, 0.5);
+    }
   </style>
 </head>
 <body>
@@ -97,54 +132,34 @@
     </ul>
   </nav>
 
-  <section>
-    <h2>Add player</h2>
-    <form method = "POST" action = "{% url 'players' %}">
-      {% csrf_token %}
-      <label for="in_name">Name:</label>
-      <input type="text" id="in_name" name="name" placeholder="Enter player name" required>
-
-      <label for="in_surname">Surname:</label>
-      <input type="text" id="in_surname" name="surname" placeholder="Enter player surname" required>
-
-
-      <label for="in_ranking">Ranking:</label>
-      <input type="number" id="in_ranking" name="ranking" placeholder="Enter player ranking" required>
-
-      <input type="submit" value="Add player">
-    </form>
+  <section class="buttons">
+    <button><a href="../player_add.html/">Add Game</a></button>
+    <button><a href="player_delete.html/">Delete Game</a></button>
+    <button><a href="player_update.html/">Update Game</a></button>
   </section>
-  <section>
-    <h2>Remove player</h2>
-    <form method = "POST" action = "{% url 'players' %}">
-      {% csrf_token %}
-      <label for="in_ID">ID:</label>
-      <input type="text" id="in_ID" name="ID" placeholder="Enter player ID" required>
-
-      <input type="submit" value="Remove player">
-    </form>
-  </section>
-
-  <section>
-    <h2>Update player</h2>
-    <form method = "POST" action = "{% url 'players' %}">
-      {% csrf_token %}
-      <label for="in_ID">ID:</label>
-      <input type="text" id="in_ID" name="ID" placeholder="Enter player ID" required>
   
-
-      <label for="in_name">Name:</label>
-      <input type="text" id="in_name" name="name" placeholder="Enter player name" required>
-
-      <label for="in_surname">Surname:</label>
-      <input type="text" id="in_surname" name="surname" placeholder="Enter player Surname" required>
-
-
-      <label for="in_ranking">Ranking:</label>
-      <input type="number" id="in_ranking" name="ranking" placeholder="Enter player ranking" required>
-
-      <input type="submit" value="Update player">
-    </form>
+  <section>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Player</th>
+          <th>Ranking</th>
+          <th>Last update</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in all %}
+        <tr>
+          <td>{{item.id}}</td>
+          <td>{{item.name}} {{item.surname}}</td>
+          <td>{{item.ranking}}</td>
+          <td>{{item.last_update}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </section>
+
 </body>
 </html>

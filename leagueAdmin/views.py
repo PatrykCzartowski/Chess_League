@@ -11,10 +11,12 @@ def index(request):
     return render(request, 'index.html/', {'all_p': all_players, 'all_g': all_games})
 
 def games(request):
-    return render(request,'games.html/')
+    game = Games.objects.all
+    return render(request,'games.html/', {'all': game})
 
 def players(request):
-    return render(request,'players.html/')
+    player = Players.objects.all
+    return render(request,'players.html/', {'all': player})
 
 def log_in(request):
     if request.method == 'POST':
@@ -25,3 +27,15 @@ def log_in(request):
             return render(request, 'games.html')
     else:
         return render(request, 'login.html')
+    
+def player_add(request):
+    return render(request,'players_add.html/',)
+
+def player_delete(request):
+    return render(request,'players_delete.html/',)
+
+def player_update(request):
+    return render(request,'players_update.html/',)
+
+def games_add(request):
+    return render(request,'games_add.html/',)
