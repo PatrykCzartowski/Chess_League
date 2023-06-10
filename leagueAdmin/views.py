@@ -71,6 +71,10 @@ def player_update(request):
             return players(request)
     return render(request,'player_update.html',)
 
+#--------------------------------#
+#Admins - game CRUD operations:
+#--------------------------------#
+
 # Game add form rendering and saving in the database:
 def game_add(request):
     if request.method == 'POST':
