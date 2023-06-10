@@ -94,19 +94,15 @@
     <table>
       <thead>
         <tr>
-          <th>ID</th>
           <th>Player</th>
           <th>Ranking</th>
-          <th>Last update</th>
         </tr>
       </thead>
       <tbody>
         {% for item in all_p %}
         <tr>
-          <td>{{item.id}}</td>
           <td>{{item.name}} {{item.surname}}</td>
           <td>{{item.ranking}}</td>
-          <td>{{item.last_update}}</td>
         </tr>
         {% endfor %}
       </tbody>
@@ -118,19 +114,15 @@
     <table>
       <thead>
         <tr>
-          <th>ID</th>
           <th>Players</th>
           <th>Result</th>
-          <th>Last update</th>
         </tr>
       </thead>
       <tbody>
         {% for item in all_g %}
         <tr>
-          <td>{{item.id}}</td>
           <td>{{item.players}}</td>
           <td>{{item.result}}</td>
-          <td>{{item.last_update}}</td>
         </tr>
         {% endfor %}
       </tbody>

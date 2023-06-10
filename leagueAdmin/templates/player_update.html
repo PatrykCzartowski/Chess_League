@@ -1,0 +1,128 @@
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  
+    <title>Admin Panel</title>
+    <link rel="icon" type="image/x-icon" href="./assets/logo.svg" />
+  </head>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Open Sans", sans-serif;
+    }
+  
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    header h1 {
+      margin-right: 5px;
+    }
+  
+    nav {
+      background-color: lightseagreen;
+      padding: 10px;
+    }
+  
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+    }
+  
+    nav ul li {
+      margin-right: 10px;
+    }
+  
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 5px 10px;
+    }
+  
+    section {
+      padding: 20px;
+    }
+  
+    form {
+        width: 400px;
+        margin: 0 auto;
+      }
+  
+      form label, form input {
+        display: block;
+        margin-bottom: 10px;
+      }
+  
+      form input[type="text"], form input[type="number"] {
+        width: 100%;
+        padding: 5px;
+      }
+  
+      form input[type="submit"] {
+        background-color: lightseagreen;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+      }
+  
+      h2 {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+      }
+  </style>
+  
+  <body>
+    <header>
+      <h1>Admin Panel</h1>
+    </header>
+  
+    <nav>
+      <ul>
+        <li><a href="/leagueAdmin/players/">Back</a></li>
+        <li><a href="/leagueAdmin">Log out</a></li>
+      </ul>
+    </nav>
+  
+    <section>
+      <h2>Update Game</h2>
+      <form method="POST" action="{% url 'player_update' %}">
+        {% csrf_token %}
+        <label for="ID">ID:</label>
+        <input
+          type="text"
+          id="ID"
+          name="ID"
+          placeholder="Enter ID"
+          required
+        />
+  
+        <label for="results">New ranking:</label>
+        <input
+          type="text"
+          id="ranking"
+          name="ranking"
+          placeholder="Enter new ranking"
+          required
+        />
+  
+        <input type="submit" value="Update player" />
+      </form>
+    </section>
+  </body>

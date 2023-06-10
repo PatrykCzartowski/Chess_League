@@ -95,43 +95,34 @@
 
   <nav>
     <ul>
-      <li><a href="/leagueAdmin/players/">Back</a></li>
+      <li><a href="/leagueAdmin/games/">Back</a></li>
       <li><a href="/leagueAdmin">Log out</a></li>
     </ul>
   </nav>
 
   <section>
-    <h2>Add player</h2>
-    <form method="POST" action="{% url 'player_add' %}">
+    <h2>Add Game</h2>
+    <form method="POST" action="{% url 'game_add' %}">
       {% csrf_token %}
-      <label for="name">Name:</label>
+      <label for="players">Players:</label>
       <input
         type="text"
-        id="name"
-        name="name"
-        placeholder="Enter name"
+        id="players"
+        name="players"
+        placeholder="Enter players"
         required
       />
 
-      <label for="surname">Surname:</label>
+      <label for="results">Result:</label>
       <input
         type="text"
-        id="surname"
-        name="surname"
-        placeholder="Enter surname"
+        id="result"
+        name="result"
+        placeholder="Enter result"
         required
       />
 
-      <label for="ranking">Ranking:</label>
-      <input
-        type="text"
-        id="ranking"
-        name="ranking"
-        placeholder="Enter ranking"
-        required
-      />
-
-      <input type="submit" value="Add player" />
+      <input type="submit" value="Add game" />
     </form>
   </section>
 </body>

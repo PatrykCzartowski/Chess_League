@@ -95,16 +95,16 @@
   
     <nav>
       <ul>
-        <li><a href="/leagueAdmin/players/">Back</a></li>
+        <li><a href="/leagueAdmin/games/">Back</a></li>
         <li><a href="/leagueAdmin">Log out</a></li>
       </ul>
     </nav>
   
     <section>
-      <h2>Delete player</h2>
-      <form method="POST" action="{% url 'player_delete' %}">
+      <h2>Delete Game</h2>
+      <form method="POST" action="{% url 'game_delete' %}">
         {% csrf_token %}
-        <label for="ID">Player ID:</label>
+        <label for="ID">Game ID:</label>
         <input
           type="text"
           id="ID"
@@ -113,7 +113,7 @@
           required
         />
   
-        <input type="submit" value="Delete player" />
+        <input type="submit" value="Delete game" />
       </form>
     </section>
   </body>
