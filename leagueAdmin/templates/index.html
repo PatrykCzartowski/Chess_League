@@ -6,7 +6,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 
   <title>Chess League</title>
-  <link rel="icon" type="image/x-icon" href="./assets/logo.svg">
+  {% load static %}
+  <link rel="icon" type="image/x-icon" href="{% static '/images/logo.svg' %}">
   <style>
     * {
       margin: 0;
@@ -81,6 +82,7 @@
 <body>
   <header>
     <h1>Chess League</h1>
+    <img src="{% static 'images/logo.svg' %}" height="50px" width="50px" >
   </header>
 
   <nav>
